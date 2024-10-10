@@ -15,5 +15,5 @@ jobs:
       - name: Displah Dir and List files on windows
         run: | 
           pwd
-            ls -a
-            echo $GITHUB_WORKSPACE
+          ls -l
+          echo $GITHUB_WORKSPACE
