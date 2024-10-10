@@ -14,7 +14,7 @@ jobs:
       - name: Change Directory to /home/runner
         working-directory: /home/runner
         run: pwd
-        
+
   display-dir-and-list-files-on-windiow:
     runs-on: windows-latest
     defaults:
@@ -23,6 +23,6 @@ jobs:
     steps:  
       - name: Displah Dir and List files on windows
         run: | 
-          Get-Location
+          echo Get-Location
           dir
           echo $env:GITHUB_WORKSPACE
