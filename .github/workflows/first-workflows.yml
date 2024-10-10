@@ -26,5 +26,6 @@ jobs: # key
         run: echo "Dependent job"
       - name: Show error msg by using "::error::"
         run: echo "::error::Missing semicolon"
+        # ::error:: will not fail / stop your workflow but it give or display msg as error.
     # Now push this code on your github organization's created new repository.
   
