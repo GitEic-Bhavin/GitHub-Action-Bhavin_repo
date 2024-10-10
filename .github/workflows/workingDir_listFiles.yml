@@ -7,7 +7,7 @@ jobs:
       - name: Display working directory and list files
         run: | 
           pwd
-          ls -a
+          ls -l
           echo $GITHUB_WORKSPACE
   display-dir-and-list-files-on-windiow:
     runs-on: windows-latest
