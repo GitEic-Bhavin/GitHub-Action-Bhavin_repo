@@ -1,0 +1,16 @@
+name: First Workflow
+on: [push]  # wirte event tupes -- git push is event.
+
+jobs: # key
+  run-shell-commands: # object(map) 
+    runs-on: ubuntu-20.04  # Define runner machine
+    steps: # steps has array.
+      - name: echo a string
+        run: echo "Hello World"
+      - name: Multiple commands
+        run: |
+          node -v
+          npm -v
+
+    # Now push this code on your github organization's created new repository.
+  
