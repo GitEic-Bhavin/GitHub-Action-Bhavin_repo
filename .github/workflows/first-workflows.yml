@@ -12,12 +12,17 @@ jobs: # key
           node -v
           npm -v
 
-  parallel-job:
+  parallel-job: # You can anything write key
     runs-on: ubuntu-20.04
     steps:
       - name: View ubuntu Version
         run: cat /etc/*release
 
-
+  dependent-job: # job name
+    runs-on: ubuntu-20.04 # Runner Machine
+    needs: run-shell-commands # define depends_on job name sould run first.
+    steps:
+      - name: echo a string
+        run: echo "Dependent job"
     # Now push this code on your github organization's created new repository.
   
