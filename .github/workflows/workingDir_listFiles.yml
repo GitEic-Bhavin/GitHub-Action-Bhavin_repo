@@ -1,5 +1,6 @@
 name: Working Dir and shells
 on: [push]
+
 jobs: 
   display-directory-and-list-files:
     runs-on: ubuntu-latest
@@ -9,11 +10,19 @@ jobs:
           pwd
           ls -l
           echo $GITHUB_WORKSPACE
+
+      - name: Change Directory to /home/runner
+        working-directory: /home/runner
+        run: pwd
+        
   display-dir-and-list-files-on-windiow:
     runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh # use powershell for windows.
     steps:  
       - name: Displah Dir and List files on windows
         run: | 
-          pwd
-          ls
-          echo $GITHUB_WORKSPACE
+          Get-Location
+          dir
+          echo $env:GITHUB_WORKSPACE
