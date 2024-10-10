@@ -1,0 +1,23 @@
+name: Run first job
+on: [push]
+
+jobs:
+  run-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print echo
+        run: echo "Hello World"
+      - name: Multiple commands
+        run: |
+          node -v
+          npm -v
+
+  show-error_by-wf-command:
+    runs-on: ubuntu-20.04
+    needs: [run-commands]
+    steps:
+      - name: display msg as error
+        run: echo "::error::Missing semicolon" 
+        # Show msg as error by using ::error:: is wf command
+        # Push code and show github actions.
+        
