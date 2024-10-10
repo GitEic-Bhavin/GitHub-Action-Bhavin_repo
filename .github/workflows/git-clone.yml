@@ -15,7 +15,7 @@ jobs:
           # secrets.GITHUB_TOKEN -- auto create secret token for authentications
           # GITHUB_REPOSITORY -- Repo name.
           git fetch origin
-          git checkout main
+          git checkout master
       
       - name: List files after clone repo
         run: ls -a
