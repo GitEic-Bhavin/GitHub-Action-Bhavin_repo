@@ -24,5 +24,7 @@ jobs: # key
     steps:
       - name: echo a string
         run: echo "Dependent job"
+      - name: Show error msg by using "::error::"
+        run: echo "::error::Missing semicolon"
     # Now push this code on your github organization's created new repository.
   
