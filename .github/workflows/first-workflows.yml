@@ -12,5 +12,12 @@ jobs: # key
           node -v
           npm -v
 
+  parallel-job:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: View SW Version
+        run: sw_vers
+
+
     # Now push this code on your github organization's created new repository.
   
