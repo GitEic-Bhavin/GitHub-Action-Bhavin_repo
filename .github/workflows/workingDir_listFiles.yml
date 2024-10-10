@@ -1,7 +1,7 @@
 name: Working Dir and shells
 on: [push]
 jobs: 
-  display directory and list files:
+  display-directory-and-list-files:
     runs-on: ubuntu-latest
     steps:
       - name: Display working directory and list files
@@ -9,7 +9,7 @@ jobs:
           pwd
           ls -a
           echo $GITHUB_WORKSPACE
-  display dir and list files on windiow:
+  display-dir-and-list-files-on-windiow:
     runs-on: windows-latest
     steps:  
       - name: Displah Dir and List files on windows
