@@ -1,0 +1,30 @@
+name: how to create action instaed of write multiple commands
+on: [push]
+jobs:
+  create-simple-action:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: create type 1 JS action
+        id: greet
+        uses: actions/hello-world-javascript-action@a5188c871c8bf440b511e0a76dd8e0bd8d3fe0b0
+        with:
+          who-to-greet: Bhavin
+
+      - name: Log Greeting Time
+        run: echo "{{ steps.greet.outputs.time }}"
+        # need ref action -- if action is private or lives inside of your repo.
+        # you can ref the path of the actions.
+        # Ex. .github/action/name--
+
+        # If action is lives on public repository. you can ref actions by
+        # 1. username/repo_name like GitEic-Bhavin/repo1@branchname_or_commit_id or Ref_tag_or_versions
+        # Instead of use of commit_id or branch_name -- ThumbRule is use Specific Version or Tag. bcz, whenever you push new code with that same tag or version, it will easy for github to take code for actions.
+        # While you use commit_id or branch_name -- while you push new code , commit_id will be changed. so you have to update commit_id into workflow/files.
+    
+        # 2. wirte docker.
+
+        # Action can recieve input and produce output also.
+        # To Produce output of specific action or steps, at that steps we have to give id: "custome_string" to use this id as ref to produc of output
+
+        # Input by use key with:
+        # Print output by run: echo "{{ object_of_job.id_value.outputs.time }}"
