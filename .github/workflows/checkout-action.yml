@@ -1,4 +1,4 @@
-name: Checkout repo on runner machine
+name: Checkout repo on runner machine by checkout-action-v4
 on: [push]
 
 jobs:
