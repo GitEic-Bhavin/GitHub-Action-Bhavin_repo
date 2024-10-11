@@ -11,7 +11,10 @@ jobs:
           who-to-greet: Bhavin
 
       - name: Log Greeting Time
-        run: echo "{{ steps.greet.outputs.time }}"
+        run: echo "{{ steps.greet.outputs.date }}"
+
+        # If you dont found printed time as output, then action/repo dont has code for that in .js file.
+
         # need ref action -- if action is private or lives inside of your repo.
         # you can ref the path of the actions.
         # Ex. .github/action/name--
