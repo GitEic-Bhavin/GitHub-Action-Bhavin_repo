@@ -6,6 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo $GITHUB_SHA
+          echo $GITHUB_SHA  
           echo $GITHUB_REF
       - uses: actions/checkout@v4
+
+# $GITHUB_SHA -- Print commit Id
+# $GITHUB_REF -- Print refs/heads/master  -- Print tag of latest committed branch with head.
