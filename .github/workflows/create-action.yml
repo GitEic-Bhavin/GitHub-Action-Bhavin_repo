@@ -11,7 +11,7 @@ jobs:
           who-to-greet: Bhavin
 
       - name: Log Greeting Time
-        run: echo "{{ steps.greet.outputs.date }}"
+        run: echo "${{ steps.greet.outputs.date }}"
 
         # If you dont found printed time as output, then action/repo dont has code for that in .js file.
 
