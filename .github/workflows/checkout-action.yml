@@ -3,15 +3,15 @@ on: [push]
 
 jobs:
 
-  # checkout-action:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: List files before
-  #       run: ls -a
-  #     - uses: actions/checkout@v4  # v4 is a latest versiuon of checkout action in github.
-  #     # Refer link: https://github.com/marketplace/actions/checkout
-  #     - name: List files after checkout-action
-  #       run: ls -a
+  checkout-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List files before
+        run: ls -a
+      - uses: actions/checkout@v4  # v4 is a latest versiuon of checkout action in github.
+      # Refer link: https://github.com/marketplace/actions/checkout
+      - name: List files after checkout-action
+        run: ls -a
 
   checkout-display-files:
     runs-on: ubuntu-latest
