@@ -15,13 +15,14 @@ on:
 ###############################################################################################
 # NOTE: You Can't use branches and branches-ignore in same job name in same workflow.
 ###############################################################################################
-    tags:
-      - v1.* # Match Pattern like v1.1, v1.1.2
-      - "!v1.1.1" # Dont run for this tag and run for all tags matched with v1.1, v1.1.2 etc.
+
+    # tags:
+    #   - v1.* # Match Pattern like v1.1, v1.1.2
+    #   - "!v1.1.1" # Dont run for this tag and run for all tags matched with v1.1, v1.1.2 etc.
     
-    paths:
-      - "**.js"
-      - "!app.js"
+    # paths:
+    #   - "**.js"
+    #   - "!app.js"
 
 ###############################################################################################
 # NOTE: This Workflow will work when this all should are matched like branches and branches_ignore,
