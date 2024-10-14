@@ -1,0 +1,21 @@
+name: Repository Events
+# on: [push, pull_request, issues]
+# Instead of define event as array we can define it as Event Activity Type.
+# Means, Ex. Pull_requests -- so which type of event of pull_requests ?
+# Ex. Opened, assigned, reopened, synchronize ?
+
+on:
+  push:
+  pull_request: 
+    types: [opened, assigned, reopened, synchronize]
+  issues: 
+    types: [opened]
+
+jobs:
+  checkout-test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REF
+      - uses: actions/checkout@v4
