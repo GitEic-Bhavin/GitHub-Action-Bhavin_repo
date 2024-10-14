@@ -10,4 +10,4 @@ jobs:
   echo-string:
     runs-on: ubuntu-latest
     steps:
-      - run: ehco "This workflow Run successfully after other workflow run and completed."
+      - run: echo "This workflow Run successfully after other workflow run and completed."
