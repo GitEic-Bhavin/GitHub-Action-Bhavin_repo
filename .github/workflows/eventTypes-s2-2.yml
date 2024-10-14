@@ -1,4 +1,4 @@
-name: Repository Events
+name: Repository Events Activity Types
 # on: [push, pull_request, issues]
 # Instead of define event as array we can define it as Event Activity Type.
 # Means, Ex. Pull_requests -- so which type of event of pull_requests ?
