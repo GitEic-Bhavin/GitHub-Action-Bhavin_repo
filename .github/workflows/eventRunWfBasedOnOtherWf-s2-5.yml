@@ -2,12 +2,12 @@
 
 name: Workflow Run
 on:
-  workflow_run:
-    workflows: [Repository Events]
-    types: [completed]
+  workflow_run: # workflow run
+    workflows: [Repository Events]  # Type of workflow is Repository Events.
+    types: [completed]  # status of Event of workflow is run successfully and completed.
 
-jobs:
-  echo-string:
+jobs: # This job is based on workflow event . means Run this job after other workflow is completed.
+  echo-string:  # your task name
     runs-on: ubuntu-latest
     steps:
       - run: echo "This workflow Run successfully after other workflow run and completed."
