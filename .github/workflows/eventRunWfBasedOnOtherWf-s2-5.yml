@@ -1,0 +1,13 @@
+# Run this workflow based on other workflow run successfully or completed.
+
+name: Workflow Run
+on:
+  workflow_run:
+    workflows: [Repository Events]
+    types: [completed]
+
+jobs:
+  echo-string:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ehco "This workflow Run successfully after other workflow run and completed."
