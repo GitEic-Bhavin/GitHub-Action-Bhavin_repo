@@ -3,7 +3,7 @@
 name: Workflow Run
 on:
   workflow_run: # workflow run
-    workflows: [Repository Events]  # Type of workflow is Repository Events.
+    workflows: [Repository Events, First Workflow]  # This is your job name defined in other workflow file.
     types: [completed]  # status of Event of workflow is run successfully and completed.
 
 jobs: # This job is based on workflow event . means Run this job after other workflow is completed.
