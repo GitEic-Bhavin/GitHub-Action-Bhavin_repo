@@ -1,0 +1,45 @@
+name: Repository Events Runs on Filtered Branches or Ignore Branches
+# on: [push, pull_request, issues]
+# Instead of define event as array we can define it as Event Activity Type.
+# Means, Ex. Pull_requests -- so which type of event of pull_requests ?
+# Ex. Opened, assigned, reopened, synchronize ?
+
+on:
+  push:
+    # branches: # Runs on all or specific branches defined in lists.
+    #   - master
+    branches-ignore: # Runs on all branches exept/ignore the feature/* branches. match pattern like feature/dev.
+      - "feature/*" 
+      # - "feature/**" # Ignore for branches match pattern like feature/dev/proj or feature/dev/task.
+
+###############################################################################################
+# NOTE: You Can't use branches and branches-ignore in same job name in same workflow.
+###############################################################################################
+    tags:
+      - v1.* # Match Pattern like v1.1, v1.1.2
+      - "!v1.1.1" # Dont run for this tag and run for all tags matched with v1.1, v1.1.2 etc.
+    
+    paths:
+      - "**.js"
+      - "!app.js"
+
+###############################################################################################
+# NOTE: This Workflow will work when this all should are matched like branches and branches_ignore,
+# tags should match with v1.1.2 and v1.1 and not work for v1.1.1,
+# Path should match with **.js file name.
+# If this all are match then this workflow will work.
+###############################################################################################
+
+  pull_request: 
+    types: [opened, assigned, reopened, synchronize]
+  issues: 
+    types: [opened]
+
+jobs:
+  checkout-test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REF
+      - uses: actions/checkout@v4
