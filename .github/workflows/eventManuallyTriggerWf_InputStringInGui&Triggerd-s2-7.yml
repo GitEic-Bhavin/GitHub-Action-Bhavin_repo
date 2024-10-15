@@ -18,3 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo $GITHUB_REF
+      # Access out input defined above.
+      - run: |
+          echo "String: ${{ inputs.string }}"
+          echo "Number: ${{ inputs.number }}"
+  
+# We are print from inputs > string.
