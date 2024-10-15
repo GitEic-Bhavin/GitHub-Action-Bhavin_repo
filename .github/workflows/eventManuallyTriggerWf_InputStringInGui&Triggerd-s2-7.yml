@@ -7,10 +7,10 @@ on:
         type: string
         required: true
         default: "Default Value"
-      # number: 
-      #   description: A Number Input
-      #   default: 4
-      #   type: number
+      number: 
+        description: A Number Input
+        default: 4
+        type: number
 
 
 jobs:
