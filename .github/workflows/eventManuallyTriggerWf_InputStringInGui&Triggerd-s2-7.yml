@@ -6,11 +6,32 @@ on:
         description: A String Input
         type: string
         required: true
-        default: "Default Value"
+        default: "Default Value" # Defult value. you can overwite or put new values.
       number: 
         description: A Number Input
         default: 4
-        type: number
+        type: number  # you can wirte number and string both.
+
+      option:
+        description: "An Options Input"
+        required: true
+        default: "Option 3"
+        type: choice  # choice type -- you can select option.
+        options:
+          - Option 1
+          - Option 2
+          - Option 3
+
+      boolean:
+        description: A boolean options
+        required: false # If true then check box is ticked.
+        type: boolean
+
+      environment:
+        description: "Choose Env to deploy code"
+        type: environment
+        required: false # Bydefault this is unchecked box.
+
 
 
 jobs:
@@ -22,5 +43,8 @@ jobs:
       - run: |
           echo "String: ${{ inputs.string }}"
           echo "Number: ${{ inputs.number }}"
+          echo "Option: "{{ inputs.option }}"
+          echo "Boolean: ${{ inputs.boolean }}"
+          echo "Environment ${{ inputs.environment }}"
   
 # We are print from inputs > string.
