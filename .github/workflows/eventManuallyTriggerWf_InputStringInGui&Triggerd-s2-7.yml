@@ -50,3 +50,8 @@ jobs:
 # We are print from inputs > string.
 
 # This is required when you want to deploy code in specific environment with user input and manually tirggered.
+
+# To Trigger by Github Cli 
+# Run command if github cli (gh) is installed
+# Run gh auth login to set credentials.
+# gh workflow run "Manually Triggered by Input"  -f string="From Github Cli triggred" -f number="4" -f option="Option 2"
