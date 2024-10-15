@@ -48,3 +48,5 @@ jobs:
           echo "Environment ${{ inputs.environment }}"
   
 # We are print from inputs > string.
+
+# This is required when you want to deploy code in specific environment with user input and manually tirggered.
